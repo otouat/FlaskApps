@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pokémon Search Results</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  <link rel="canonical" href="https://picocss.com/examples/basic-template/">
+  <link rel="stylesheet" href="/static/custom.css">
+</head>
+
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Flask Application</strong></a></li>
+    </ul>
+    <ul>
+      <li>
+        <details role="list" dir="rtl">
+          <summary aria-haspopup="listbox" role="link" class="secondary">Theme</summary>
+          <ul role="listbox">
+            <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+            <li><a href="#" data-theme-switcher="light">Light</a></li>
+            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <result class="grid">
+      <div>
+        <hgroup>
+          <h1>{{ name }}</h1>
+          <p>{{ types }}</p>
+          <!-- <p>{{ stats_string }}</p> -->
+          <table>
+            <thead>
+              <tr>
+                <th>Stat</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for stat in stat_table %}
+              <tr>
+                <td>{{ stat.name }}</td>
+                <td>{{ stat.value }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </hgroup>
+      </div>
+      <div>
+        {% if picture_url != "" %}
+        <img src="{{ picture_url }}" alt="Pokémon Picture">
+        {% else %}
+        <p>No picture available</p>
+        {% endif %}
+      </div>
+    </result>
+  </main>
+
+  <script src="https://picocss.com/examples/js/minimal-theme-switcher.js"></script>
+</body>
+
+</html>
