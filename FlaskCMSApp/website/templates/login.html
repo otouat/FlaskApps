@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+<h1>Login</h1>
+{% endblock %}
+{% block content %}
+<article class="grid">
+    <div>
+        <hgroup>
+            <h1>Login</h1>
+            <h2>Access your personal space</h2>
+        </hgroup>
+        <form method="POST">
+            <input type="text" name="email" placeholder="Email" aria-label="Email" autocomplete="nickname" required />
+            <input type="password" name="password" placeholder="Password" aria-label="Password"
+                autocomplete="current-password" required />
+            <fieldset>
+                <label for="remember">
+                    <input type="checkbox" role="switch" id="remember" name="remember" />
+                    Remember me
+                </label>
+            </fieldset>
+            <button type="submit" class="contrast">Login</button>
+        </form>
+    </div>
+    <div></div>
+</article>
+{% endblock %}

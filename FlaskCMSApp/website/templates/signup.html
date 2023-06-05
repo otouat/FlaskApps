@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+<h1>Sign-Up</h1>
+{% endblock %}
+{% block content %}
+<article class="grid">
+    <div>
+        <h1>Sign Up</h1>
+        <form method="POST">
+            <input type="email" name="email" id="email" placeholder="Enter Email" aria-label="Email Address" required />
+            <input type="text" name="firstName" placeholder="Enter Name" aria-label="First Name"  required />
+            <input type="password" name="password1" placeholder="Enter Password" aria-label="Password" required />
+            <input type="password" name="password2" placeholder="Confirm Password" aria-label="Password (Confirm)" required />
+            <button type="submit" class="contrast">Login</button>
+        </form>
+    </div>
+    <div></div>
+</article>
+{% endblock %}
