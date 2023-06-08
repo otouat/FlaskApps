@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://picocss.com/examples/bootstrap-grid/" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <!-- Pico.css custom build with Bootstrap grid -->
+    <link rel="stylesheet" href="/static/pico-bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/static/custom.css">
+</head>
+
+<body>
+    <nav class="container-fluid">
+
+        <ul>
+            <li><a href="./" class="contrast"><strong>Object Detection Application</strong></a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <details role="list" dir="rtl">
+                    <summary aria-haspopup="listbox" role="link" class="secondary">Theme</summary>
+                    <ul role="listbox">
+                        <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                        <li><a href="#" data-theme-switcher="light">Light</a></li>
+                        <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://picocss.com/examples/js/minimal-theme-switcher.js"></script>
+    <script src="https://picocss.com/docs/js/modal.min.js"></script>
+    {% block javascript %}
+    <script type="text/javascript">
+        function deleteNote(noteId) {
+            fetch("/delete-note", {
+                method: "POST",
+                body: JSON.stringify({ noteId: noteId }),
+            }).then((_res) => {
+                window.location.href = "/";
+            });
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>

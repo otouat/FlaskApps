@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+Image Analysis
+{% endblock %}
+{% block content %}
+<article class="grid">
+    <div>
+        <hgroup>
+            <h1>Object Detection App</h1>
+            <h2>An AI model identify the uploaded picture</h2>
+        </hgroup>
+        <br>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Image File">
+        </div>
+
+
+        <br>
+        <br>
+        <form action="/detect_object" target="_blank">
+            <input type="submit" value="Detect Object" />
+        </form>
+    </div>
+</article>
+{% endblock %}
