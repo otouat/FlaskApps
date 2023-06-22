@@ -24,3 +24,4 @@ tzdata==2023.3
 urllib3==2.0.2
 vaderSentiment==3.3.2
 Werkzeug==2.3.4
+pytest

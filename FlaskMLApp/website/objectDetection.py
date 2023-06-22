@@ -12,31 +12,6 @@ import numpy as np
 
 objectDetection = Blueprint('views', __name__)
 
-
-import cv2
-import numpy as np
-import os
-
-import cv2
-import numpy as np
-import os
-
-import cv2
-import numpy as np
-import os
-
-import cv2
-import numpy as np
-import os
-
-import cv2
-import numpy as np
-import os
-
-import cv2
-import numpy as np
-import os
-
 def detect_object(uploaded_image_path):
     # Loading image
     img = cv2.imread(uploaded_image_path)
@@ -156,5 +131,4 @@ def add_header(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
-    response.headers['Cache-Control'] = 'public, max-age=0'
     return response
